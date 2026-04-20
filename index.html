@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Carlos de Oro Aguado">
+<meta name="dcterms.date" content="2026-04-19">
+
+<title>Asociación entre el nivel de actividad física y flexibilidad en escolares de 6 a 12 años con el estado nutricional en instituciones educativas de la ciudad de Barranquilla Colombia (2025-206)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="eda_af_flex_files/libs/clipboard/clipboard.min.js"></script>
+<script src="eda_af_flex_files/libs/quarto-html/quarto.js"></script>
+<script src="eda_af_flex_files/libs/quarto-html/popper.min.js"></script>
+<script src="eda_af_flex_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="eda_af_flex_files/libs/quarto-html/anchor.min.js"></script>
+<link href="eda_af_flex_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="eda_af_flex_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="eda_af_flex_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="eda_af_flex_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="eda_af_flex_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="eda_af_flex_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="eda_af_flex_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Asociación entre el nivel de actividad física y flexibilidad en escolares de 6 a 12 años con el estado nutricional en instituciones educativas de la ciudad de Barranquilla Colombia (2025-206)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Carlos de Oro Aguado </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 19, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="análisis-exploratorio-de-los-datos" class="level1">
+<h1>Análisis exploratorio de los datos</h1>
+<section id="imputación-de-datos-faltantes" class="level2">
+<h2 class="anchored" data-anchor-id="imputación-de-datos-faltantes">Imputación de datos faltantes</h2>
+<p>Veamos si hay datos faltantes</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eda_af_flex_files/figure-html/vis_data_faltante-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos notar que hay datos faltantes, como es menos del <span class="math inline">\(2\%\)</span>, usaremos tecnicas de para la imputacion de datos.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="rmoszpsdug" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rmoszpsdug table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rmoszpsdug thead, #rmoszpsdug tbody, #rmoszpsdug tfoot, #rmoszpsdug tr, #rmoszpsdug td, #rmoszpsdug th {
+  border-style: none;
+}
+
+#rmoszpsdug p {
+  margin: 0;
+  padding: 0;
+}
+
+#rmoszpsdug .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rmoszpsdug .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rmoszpsdug .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rmoszpsdug .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rmoszpsdug .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rmoszpsdug .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rmoszpsdug .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rmoszpsdug .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rmoszpsdug .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rmoszpsdug .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rmoszpsdug .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rmoszpsdug .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rmoszpsdug .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rmoszpsdug .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rmoszpsdug .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rmoszpsdug .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rmoszpsdug .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rmoszpsdug .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rmoszpsdug .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rmoszpsdug .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rmoszpsdug .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rmoszpsdug .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rmoszpsdug .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rmoszpsdug .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rmoszpsdug .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rmoszpsdug .gt_left {
+  text-align: left;
+}
+
+#rmoszpsdug .gt_center {
+  text-align: center;
+}
+
+#rmoszpsdug .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rmoszpsdug .gt_font_normal {
+  font-weight: normal;
+}
+
+#rmoszpsdug .gt_font_bold {
+  font-weight: bold;
+}
+
+#rmoszpsdug .gt_font_italic {
+  font-style: italic;
+}
+
+#rmoszpsdug .gt_super {
+  font-size: 65%;
+}
+
+#rmoszpsdug .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rmoszpsdug .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rmoszpsdug .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rmoszpsdug .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rmoszpsdug .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rmoszpsdug .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rmoszpsdug .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#rmoszpsdug .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#rmoszpsdug div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Valores faltantes antes y después de la imputación</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #1D3557; color: #FFFFFF; font-weight: bold" scope="col">Variable</th>
+<th id="Antes" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #1D3557; color: #FFFFFF; font-weight: bold" scope="col">Antes</th>
+<th id="Después" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #1D3557; color: #FFFFFF; font-weight: bold" scope="col">Después</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Variable">Edad_1er_tamizaje_en_años</td>
+<td class="gt_row gt_right" headers="Antes" style="background-color: #FDECEA">1</td>
+<td class="gt_row gt_right" headers="Después" style="background-color: #F0F7EE">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Variable">PANICULO_ADIPOSO</td>
+<td class="gt_row gt_right" headers="Antes" style="background-color: #FDECEA">1</td>
+<td class="gt_row gt_right" headers="Después" style="background-color: #F0F7EE">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Variable">DEFORMIDAD_DE_EXTREMIDADES</td>
+<td class="gt_row gt_right" headers="Antes" style="background-color: #FDECEA">1</td>
+<td class="gt_row gt_right" headers="Después" style="background-color: #F0F7EE">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Variable">ACANTOSIS_NIGRICAS</td>
+<td class="gt_row gt_right" headers="Antes" style="background-color: #FDECEA">1</td>
+<td class="gt_row gt_right" headers="Después" style="background-color: #F0F7EE">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Variable">Clasificacion_nutricional</td>
+<td class="gt_row gt_right" headers="Antes" style="background-color: #FDECEA">1</td>
+<td class="gt_row gt_right" headers="Después" style="background-color: #F0F7EE">0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eda_af_flex_files/figure-html/viz_imp-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="caracterización-demográfica-de-los-niños" class="level2">
+<h2 class="anchored" data-anchor-id="caracterización-demográfica-de-los-niños">Caracterización demográfica de los niños</h2>
+<p>En la <a href="#tbl-sociodem" class="quarto-xref">Table&nbsp;1</a> se presentan las distribuciones correspondientes a las variables categóricas consideradas en el estudio</p>
+<div class="cell">
+<div id="tbl-sociodem" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sociodem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Características sociodemográficas de la muestra
+</figcaption>
+<div aria-describedby="tbl-sociodem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Categoria</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">N (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Institución</td>
+<td style="text-align: left;">MARIE POUSSEPIN</td>
+<td style="text-align: left;">110 (51.6%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Institución</td>
+<td style="text-align: left;">SANTUARIO</td>
+<td style="text-align: left;">103 (48.4%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sexo</td>
+<td style="text-align: left;">Femenino</td>
+<td style="text-align: left;">158 (74.2%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sexo</td>
+<td style="text-align: left;">Masculino</td>
+<td style="text-align: left;">55 (25.8%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Grado Escolar</td>
+<td style="text-align: left;">Primero</td>
+<td style="text-align: left;">78 (36.6%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grado Escolar</td>
+<td style="text-align: left;">Quinto</td>
+<td style="text-align: left;">110 (51.6%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Grado Escolar</td>
+<td style="text-align: left;">Segundo</td>
+<td style="text-align: left;">25 (11.7%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jornada</td>
+<td style="text-align: left;">Tarde</td>
+<td style="text-align: left;">213 (100.0%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>La muestra total estuvo conformada por 213 participantes. Se observa un equilibrio aceptable entre las dos instituciones participantes, con una leve mayoría del colegio MARIE POUSSEPIN (51.6%) respecto a SANTUARIO (48.4%).</p>
+<p>En cuanto a la variable sexo, se evidencia una marcada asimetría a favor del sexo femenino, que representa casi tres cuartas partes de la muestra (74.2%), mientras que el masculino apenas alcanza el 25.8%.</p>
+<p>Respecto al grado escolar, la categoría Quinto concentra la mayor proporción (51.6%), seguida por Primero (36.6%), mientras que Segundo presenta una participación marginal (11.7%).</p>
+<p>Finalmente, la variable jornada es constante (100% turno tarde), lo que implica que no existe variabilidad intra-muestral en este factor.</p>
+<p>En la Tabla <a href="#tbl-edad" class="quarto-xref">Table&nbsp;2</a> se presentan las medidas de tendencia central, dispersión y posición para la variable Edad del primer tamizaje, expresada en años cumplidos.</p>
+<div class="cell">
+<div id="tbl-edad" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-edad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Medidas de tendencia central, dispersión y posición para la edad al primer tamizaje (años cumplidos)
+</figcaption>
+<div aria-describedby="tbl-edad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">N</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Media</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">DE</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Mediana</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Min</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Max</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Q1</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Q3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Edad (años)</td>
+<td style="text-align: right;">213</td>
+<td style="text-align: right;">5.44</td>
+<td style="text-align: right;">3.71</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>La edad media al primer tamizaje fue de 5.44 años (DE = 3.71), donde el 50% de los niños tiene edad menor a 6 años (RIC = 7 años). Ademas, abarcando un rango desde el nacimiento (0 años) hasta los 11 años.</p>
+</section>
+<section id="caraterización-de-las-variables-clínicas" class="level2">
+<h2 class="anchored" data-anchor-id="caraterización-de-las-variables-clínicas">Caraterización de las variables clínicas</h2>
+<p>En la Tabla <a href="#tbl-clinica" class="quarto-xref">Table&nbsp;3</a> se presentan las características clínicas de los escolares evaluados, incluyendo la presencia de signos clínicos de riesgo metabólico y la clasificación del estado nutricional.</p>
+<div class="cell">
+<div id="tbl-clinica" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-clinica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Características clínicas de la muestra
+</figcaption>
+<div aria-describedby="tbl-clinica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Categoria</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">N (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Panículo Adiposo</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">160 (75.1%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Panículo Adiposo</td>
+<td style="text-align: left;">Si</td>
+<td style="text-align: left;">53 (24.9%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Deformidad de Extremidades</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">213 (100.0%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Acantosis Nigricans</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">202 (94.8%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Acantosis Nigricans</td>
+<td style="text-align: left;">Si</td>
+<td style="text-align: left;">11 (5.2%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Clasificación Nutricional</td>
+<td style="text-align: left;">Delgadez</td>
+<td style="text-align: left;">25 (11.7%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Clasificación Nutricional</td>
+<td style="text-align: left;">Adecuado</td>
+<td style="text-align: left;">117 (54.9%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Clasificación Nutricional</td>
+<td style="text-align: left;">Sobrepeso</td>
+<td style="text-align: left;">48 (22.5%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Clasificación Nutricional</td>
+<td style="text-align: left;">Obesidad</td>
+<td style="text-align: left;">23 (10.8%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>En relación con las características clínicas de los escolares evaluados, el 75,1% (n = 160) no presentó panículo adiposo, mientras que el 24,9% (n = 53) mostró este signo clínico de acumulación de grasa subcutánea. La totalidad de los participantes (100,0%; n = 213) no evidenció deformidad de extremidades. En cuanto a la presencia de acantosis nigricans, marcador cutáneo asociado a resistencia a la insulina, el 94,8% (n = 202) no presentó este hallazgo, frente a un 5,2% (n = 11) que sí lo exhibió. Respecto al estado nutricional, más de la mitad de los escolares presentó una clasificación adecuada (54,9%; n = 117). No obstante, se identificó una proporción relevante de escolares con exceso de peso, siendo el sobrepeso la categoría más frecuente con un 22,5% (n = 48), seguido de obesidad con un 10,8% (n = 23). Por su parte, la delgadez se registró en el 11,7% (n = 25) de los participantes. Estos hallazgos evidencian una doble carga nutricional en la población escolar estudiada, con coexistencia de déficit y exceso de peso que requiere atención desde una perspectiva de salud pública.</p>
+</section>
+<section id="caracterización-del-nivel-de-actividad-física-y-flexibilidad-de-los-escolares" class="level2">
+<h2 class="anchored" data-anchor-id="caracterización-del-nivel-de-actividad-física-y-flexibilidad-de-los-escolares">Caracterización del nivel de actividad física y flexibilidad de los escolares</h2>
+<p>En la Tabla <a href="#tbl-af-flex" class="quarto-xref">Table&nbsp;4</a> se presentan los niveles de actividad física y flexibilidad de los escolares evaluados.</p>
+<div class="cell">
+<div id="tbl-af-flex" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-af-flex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Nivel de actividad física y flexibilidad de los escolares
+</figcaption>
+<div aria-describedby="tbl-af-flex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Categoria</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">N (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nivel de Actividad Física</td>
+<td style="text-align: left;">Bajo</td>
+<td style="text-align: left;">68 (31.9%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nivel de Actividad Física</td>
+<td style="text-align: left;">Moderado</td>
+<td style="text-align: left;">98 (46.0%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nivel de Actividad Física</td>
+<td style="text-align: left;">Alto</td>
+<td style="text-align: left;">47 (22.1%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Flexibilidad</td>
+<td style="text-align: left;">Muy baja</td>
+<td style="text-align: left;">38 (17.8%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Flexibilidad</td>
+<td style="text-align: left;">Baja</td>
+<td style="text-align: left;">141 (66.2%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Flexibilidad</td>
+<td style="text-align: left;">Promedio</td>
+<td style="text-align: left;">34 (16.0%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>En relación con el nivel de actividad física, casi la mitad de los escolares evaluados se ubicó en la categoría moderada 46,0% (n = 98), seguido por el nivel bajo con un 31,9% (n = 68), mientras que únicamente el 22,1% (n = 47) alcanzó un nivel alto de actividad física. Estos resultados indican que aproximadamente uno de cada tres escolares presenta un nivel insuficiente de actividad física, lo cual constituye un hallazgo de relevancia para la salud pública infantil. En cuanto a la flexibilidad, se observó que la mayoría de los participantes presentó niveles deficientes en esta capacidad física. La categoría baja fue la más prevalente con un 66,2% (n = 141), seguida de la categoría muy baja con un 17,8% (n = 38), lo que en conjunto representa el 84,0% de la muestra con flexibilidad por debajo del promedio. Únicamente el 16,0% (n = 34) de los escolares alcanzó un nivel promedio de flexibilidad, sin registrarse ningún caso en la categoría alta. Estos hallazgos evidencian un deterioro generalizado de la flexibilidad en la población escolar estudiada, lo que podría estar relacionado con los bajos niveles de actividad física identificados y representa una señal de alerta para el diseño de intervenciones en educación física y salud escolar.</p>
+</section>
+<section id="variables-clinicas-según-el-estado-nutricional" class="level2">
+<h2 class="anchored" data-anchor-id="variables-clinicas-según-el-estado-nutricional">Variables clinicas según el estado nutricional</h2>
+<p>Veamos una tabla de las variables clinicas con respuesto a la clasificación nutricional</p>
+<div class="cell">
+<div id="tbl-nutri-clin" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nutri-clin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Variables según estado nutricional (chi-cuadrado con simulación de 2000 replicas)
+</figcaption>
+<div aria-describedby="tbl-nutri-clin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Categoría</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Delgadez</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Adecuado</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Sobrepeso</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Obesidad</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">χ² (p-valor)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold;">Panículo adiposo</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">25 (100.0%)</td>
+<td style="text-align: center;">112 (95.7%)</td>
+<td style="text-align: center;">20 (41.7%)</td>
+<td style="text-align: center;">3 (13.0%)</td>
+<td style="text-align: center;">111.018 (p = 0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold;">Panículo adiposo</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: center;">0 (0.0%)</td>
+<td style="text-align: center;">5 (4.3%)</td>
+<td style="text-align: center;">28 (58.3%)</td>
+<td style="text-align: center;">20 (87.0%)</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold;">Acantosis nigricans</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">25 (100.0%)</td>
+<td style="text-align: center;">117 (100.0%)</td>
+<td style="text-align: center;">46 (95.8%)</td>
+<td style="text-align: center;">14 (60.9%)</td>
+<td style="text-align: center;">62.01 (p = 0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold;">Acantosis nigricans</td>
+<td style="text-align: center;">Si</td>
+<td style="text-align: center;">0 (0.0%)</td>
+<td style="text-align: center;">0 (0.0%)</td>
+<td style="text-align: center;">2 (4.2%)</td>
+<td style="text-align: center;">9 (39.1%)</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>En relación con los signos clínicos de riesgo metabólico evaluados, el análisis mediante Chi-cuadrado con simulación de Monte Carlo (2000 réplicas) evidenció asociaciones estadísticamente significativas entre el estado nutricional y la presencia de panículo adiposo y acantosis nigricans (Ver <a href="#tbl-nutri-clin" class="quarto-xref">Table&nbsp;5</a>).</p>
+<p>Respecto al panículo adiposo, se observó una asociación altamente significativa con el estado nutricional (<span class="math inline">\(\chi^2 = 111,018; p-valor &lt; 0,001\)</span>), con un gradiente progresivo según la categoría nutricional. La ausencia total de este signo en escolares con delgadez (0,0%) y su baja prevalencia en aquellos con estado nutricional adecuado (4,3%) contrastan con las elevadas proporciones registradas en los grupos con exceso de peso, donde el 58,3% de los escolares con sobrepeso y el 87,0% de aquellos con obesidad presentaron panículo adiposo positivo.</p>
+<p>En cuanto a la acantosis nigricas, también se encontró una asociación estadísticamente significativa con el estado nutricional (<span class="math inline">\(\chi^2 = 62,010; p-valor &lt; 0,001\)</span>). Su ausencia en los grupos con delgadez y estado nutricional adecuado (0,0% en ambas categorías), junto con su presencia marginal en escolares con sobrepeso (4,2%), contrasta con la prevalencia observada en el grupo con obesidad (39,1%), lo que indica un riesgo metabólico sustancialmente mayor en este subgrupo.</p>
+</section>
+<section id="nivel-de-actividad-física-según-el-estado-nutricional" class="level2">
+<h2 class="anchored" data-anchor-id="nivel-de-actividad-física-según-el-estado-nutricional">Nivel de actividad física según el estado nutricional</h2>
+<p>Realicemos las pruebas de asociación de la actividad física con respecto a la clasificación nutricional</p>
+<div class="cell">
+<div id="tbl-nutri-af" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nutri-af-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Nivel de actividad física según estado nutricional (chi-cuadrado)
+</figcaption>
+<div aria-describedby="tbl-nutri-af-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Estado Nutricional</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Bajo</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Moderado</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Alto</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">χ² (p-valor)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; width: 14em;">Delgadez</td>
+<td style="text-align: center;">8 (32.0%)</td>
+<td style="text-align: center;">11 (44.0%)</td>
+<td style="text-align: center;">6 (24.0%)</td>
+<td style="text-align: center; font-weight: bold; color: rgba(44, 123, 182, 255) !important;">5.447 (p = 0.488)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 14em;">Adecuado</td>
+<td style="text-align: center;">36 (30.8%)</td>
+<td style="text-align: center;">60 (51.3%)</td>
+<td style="text-align: center;">21 (17.9%)</td>
+<td style="text-align: center; font-weight: bold; color: rgba(44, 123, 182, 255) !important;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 14em;">Sobrepeso</td>
+<td style="text-align: center;">17 (35.4%)</td>
+<td style="text-align: center;">16 (33.3%)</td>
+<td style="text-align: center;">15 (31.2%)</td>
+<td style="text-align: center; font-weight: bold; color: rgba(44, 123, 182, 255) !important;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 14em;">Obesidad</td>
+<td style="text-align: center;">7 (30.4%)</td>
+<td style="text-align: center;">11 (47.8%)</td>
+<td style="text-align: center;">5 (21.7%)</td>
+<td style="text-align: center; font-weight: bold; color: rgba(44, 123, 182, 255) !important;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>En la Tabla <a href="#tbl-nutri-af" class="quarto-xref">Table&nbsp;6</a> se presenta la distribución del nivel de actividad física según el estado nutricional de los escolares evaluados. No se encontró asociación estadísticamente significativa entre el estado nutricional y el nivel de actividad física de los escolares (<span class="math inline">\(\chi^2_{(gl=6)} = 5.447; p-valor = 0.488\)</span>). En todas las categorías nutricionales predominó el nivel moderado de actividad física, con proporciones que oscilaron entre el 33,3% en escolares con sobrepeso y el 51,3% en aquellos con estado nutricional adecuado.</p>
+<p>No se encontró asociación estadísticamente significativa entre ambas variables (χ² = 5,447; gl = 6; p = 0,488), por lo que se acepta la hipótesis nula de independencia entre el estado nutricional y el nivel de actividad física.</p>
+</section>
+<section id="nivel-de-flexibilidad-según-el-estado-nutricional" class="level2">
+<h2 class="anchored" data-anchor-id="nivel-de-flexibilidad-según-el-estado-nutricional">Nivel de flexibilidad según el estado nutricional</h2>
+<p>Realicemos las pruebas de asociación de la flexibilidad con respecto a la clasificación nutricional</p>
+<div class="cell">
+<div id="tbl-nutri-flex" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nutri-flex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Nivel de flexibilidad según estado nutricional (chi-cuadrado con simulación de 2000 replicas)
+</figcaption>
+<div aria-describedby="tbl-nutri-flex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Estado Nutricional</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Muy baja</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Baja</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Promedio</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">χ² (p-valor)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; width: 14em;">Delgadez</td>
+<td style="text-align: center;">4 (16.0%)</td>
+<td style="text-align: center;">19 (76.0%)</td>
+<td style="text-align: center;">2 (8.0%)</td>
+<td style="text-align: center; font-weight: bold; color: rgba(44, 123, 182, 255) !important;">16.488 (p = 0.013)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 14em;">Adecuado</td>
+<td style="text-align: center;">15 (12.8%)</td>
+<td style="text-align: center;">74 (63.2%)</td>
+<td style="text-align: center;">28 (23.9%)</td>
+<td style="text-align: center; font-weight: bold; color: rgba(44, 123, 182, 255) !important;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 14em;">Sobrepeso</td>
+<td style="text-align: center;">12 (25.0%)</td>
+<td style="text-align: center;">34 (70.8%)</td>
+<td style="text-align: center;">2 (4.2%)</td>
+<td style="text-align: center; font-weight: bold; color: rgba(44, 123, 182, 255) !important;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 14em;">Obesidad</td>
+<td style="text-align: center;">7 (30.4%)</td>
+<td style="text-align: center;">14 (60.9%)</td>
+<td style="text-align: center;">2 (8.7%)</td>
+<td style="text-align: center; font-weight: bold; color: rgba(44, 123, 182, 255) !important;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>En la Tabla <a href="#tbl-nutri-flex" class="quarto-xref">Table&nbsp;7</a> se presenta la distribución del nivel de flexibilidad según el estado nutricional de los escolares evaluados. El análisis mediante Chi-cuadrado con simulación de Monte Carlo (2000 réplicas) reveló una asociación estadísticamente significativa entre el estado nutricional y el nivel de flexibilidad <span class="math inline">\((\chi^2 = 16,488; p-valor &lt; 0,05)\)</span>.</p>
+<p>En todas las categorías nutricionales predominó la flexibilidad baja, con proporciones que oscilaron entre el 60,9% en escolares con obesidad y el 76,0% en aquellos con delgadez. No obstante, se observaron diferencias relevantes en la distribución de las categorías extremas: la flexibilidad muy baja fue más frecuente en escolares con obesidad (30,4%) y sobrepeso (25,0%) en comparación con los escolares con estado nutricional adecuado (12,8%), sugiriendo un gradiente negativo entre el exceso de peso y la capacidad de flexibilidad. Por su parte, la categoría promedio fue notablemente más frecuente en escolares con estado nutricional adecuado (23,9%) frente a los grupos con exceso de peso, donde esta proporción fue marcadamente inferior (4,2% en sobrepeso y 8,7% en obesidad).</p>
+<p>Estos hallazgos sugieren que el exceso de peso se asocia con menores niveles de flexibilidad en la población escolar estudiada, lo cual tiene implicaciones relevantes para el diseño de programas de educación física y promoción de la salud en el ámbito escolar.</p>
+</section>
+<section id="modelo-de-regresión-logística-ordinal" class="level2">
+<h2 class="anchored" data-anchor-id="modelo-de-regresión-logística-ordinal">Modelo de regresión logística ordinal</h2>
+<p>Realicemos un modelo de regresión logística ordinal, esto con el fin de ver las variables asociadas y los factores de riesgo y protector</p>
+<div class="cell">
+<div id="tbl-modelo-ordinal-1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modelo-ordinal-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: Modelo de regresión logística ordinal (Odds proporcional)
+</figcaption>
+<div aria-describedby="tbl-modelo-ordinal-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">OR (IC 95%)</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">p-valor</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; width: 16em;">SexoMasculino</td>
+<td style="text-align: left;">SexoMasculino</td>
+<td style="text-align: center;">0.661 (0.289 – 1.513)</td>
+<td style="text-align: center; font-weight: bold;">0.327</td>
+<td style="text-align: center;">No significativo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 16em;">Grado_Escolar_1er_TamizajeQuinto</td>
+<td style="text-align: left;">Grado_Escolar_1er_TamizajeQuinto</td>
+<td style="text-align: center;">1.572 (0.72 – 3.43)</td>
+<td style="text-align: center; font-weight: bold;">0.256</td>
+<td style="text-align: center;">No significativo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 16em;">Grado_Escolar_1er_TamizajeSegundo</td>
+<td style="text-align: left;">Grado_Escolar_1er_TamizajeSegundo</td>
+<td style="text-align: center;">1.245 (0.466 – 3.329)</td>
+<td style="text-align: center; font-weight: bold;">0.662</td>
+<td style="text-align: center;">No significativo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; color: white !important; background-color: rgba(215, 48, 39, 255) !important; width: 16em;">PANICULO_ADIPOSOSi</td>
+<td style="text-align: left; color: white !important; background-color: rgba(215, 48, 39, 255) !important;">PANICULO_ADIPOSOSi</td>
+<td style="text-align: center; color: white !important; background-color: rgba(215, 48, 39, 255) !important;">38.917 (15.634 – 96.875)</td>
+<td style="text-align: center; color: white !important; background-color: rgba(215, 48, 39, 255) !important; font-weight: bold;">&lt; 0,001</td>
+<td style="text-align: center; color: white !important; background-color: rgba(215, 48, 39, 255) !important;">Factor de riesgo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; color: white !important; background-color: rgba(215, 48, 39, 255) !important; width: 16em;">ACANTOSIS_NIGRICASSi</td>
+<td style="text-align: left; color: white !important; background-color: rgba(215, 48, 39, 255) !important;">ACANTOSIS_NIGRICASSi</td>
+<td style="text-align: center; color: white !important; background-color: rgba(215, 48, 39, 255) !important;">12.594 (2.291 – 69.225)</td>
+<td style="text-align: center; color: white !important; background-color: rgba(215, 48, 39, 255) !important; font-weight: bold;">0.004</td>
+<td style="text-align: center; color: white !important; background-color: rgba(215, 48, 39, 255) !important;">Factor de riesgo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 16em;">FlexibilidadMuy baja</td>
+<td style="text-align: left;">FlexibilidadMuy baja</td>
+<td style="text-align: center;">1.945 (0.895 – 4.228)</td>
+<td style="text-align: center; font-weight: bold;">0.093</td>
+<td style="text-align: center;">No significativo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 16em;">FlexibilidadPromedio</td>
+<td style="text-align: left;">FlexibilidadPromedio</td>
+<td style="text-align: center;">1.098 (0.465 – 2.591)</td>
+<td style="text-align: center; font-weight: bold;">0.831</td>
+<td style="text-align: center;">No significativo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 16em;">Nivel_de_AFBajo</td>
+<td style="text-align: left;">Nivel_de_AFBajo</td>
+<td style="text-align: center;">0.942 (0.425 – 2.087)</td>
+<td style="text-align: center; font-weight: bold;">0.882</td>
+<td style="text-align: center;">No significativo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 16em;">Nivel_de_AFModerado</td>
+<td style="text-align: left;">Nivel_de_AFModerado</td>
+<td style="text-align: center;">1.334 (0.624 – 2.854)</td>
+<td style="text-align: center; font-weight: bold;">0.457</td>
+<td style="text-align: center;">No significativo</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><span style="font-style: italic;">Nota:</span> <sup></sup> Modelo: Regresión logística ordinal (Proportional Odds). Categoría de referencia: Delgadez. OR &gt; 1 = factor de riesgo; OR &lt; 1 = factor protector. Test de Brant para supuesto de proporcionalidad de odds.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div id="tbl-supuesto-modelo-ordinal-1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-supuesto-modelo-ordinal-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9: Supuesto de proporcionalidad de odds
+</figcaption>
+<div aria-describedby="tbl-supuesto-modelo-ordinal-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+</figure>
+</div>
+<p>Se realizó un modelo de regresión logística ordinal (Proportional Odds Model) con el fin de identificar las variables asociadas al estado nutricional y determinar los factores de riesgo y protectores en la población escolar evaluada. La variable dependiente fue la clasificación nutricional (Delgadez &lt; Adecuado &lt; Sobrepeso &lt; Obesidad) y se incluyeron como predictores el sexo, el grado escolar, la presencia de panículo adiposo, acantosis nigricas, el nivel de flexibilidad y el nivel de actividad física (ver <a href="#tbl-modelo-ordinal-1" class="quarto-xref">Table&nbsp;8</a>).</p>
+<p>Los resultados del modelo evidenciaron que únicamente dos variables alcanzaron significancia estadística. El panículo adiposo positivo constituyó el factor de riesgo de mayor magnitud en el modelo (OR = 38,92; IC 95%: 15,63 – 96,88; p &lt; 0,001), lo que indica que los escolares con este signo clínico tienen aproximadamente 39 veces más probabilidad de ubicarse en una categoría nutricional más grave en comparación con aquellos sin panículo adiposo, controlando las demás variables. De manera similar, la presencia de acantosis nigricans se identificó como factor de riesgo significativo (OR = 12,59; IC 95%: 2,29 – 69,23; p-valor &lt; 0,01), evidenciando que los escolares con este marcador cutáneo de resistencia a la insulina presentan aproximadamente 13 veces más probabilidad de tener un estado nutricional más desfavorable (ver <a href="#tbl-modelo-ordinal-1" class="quarto-xref">Table&nbsp;8</a>).</p>
+<p>En contraste, las variables sexo, grado escolar, nivel de flexibilidad y nivel de actividad física no mostraron asociación estadísticamente significativa con el estado nutricional (p-valor &gt; 0,05), lo que sugiere que su efecto no es independiente una vez controladas las demás covariables del modelo. Ninguna variable del modelo alcanzó la condición de factor protector (OR &lt; 1 con p-valor &lt; 0,05) (ver <a href="#tbl-modelo-ordinal-1" class="quarto-xref">Table&nbsp;8</a>)</p>
+<div class="cell">
+<div id="tbl-supuesto-modelo-ordinal-2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-supuesto-modelo-ordinal-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10: Supuesto de proporcionalidad de odds
+</figcaption>
+<div aria-describedby="tbl-supuesto-modelo-ordinal-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">Chi²</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">gl</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(26, 26, 46, 255) !important;">p-valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(44, 123, 182, 255) !important; width: 16em;">Omnibus</td>
+<td style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(44, 123, 182, 255) !important;">21.012</td>
+<td style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(44, 123, 182, 255) !important;">18</td>
+<td style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(44, 123, 182, 255) !important;">0.279</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 16em;">SexoMasculino</td>
+<td style="text-align: center;">0.941</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.625</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 16em;">Grado_Escolar_1er_TamizajeQuinto</td>
+<td style="text-align: center;">0.536</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.765</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 16em;">Grado_Escolar_1er_TamizajeSegundo</td>
+<td style="text-align: center;">1.333</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.514</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 16em;">PANICULO_ADIPOSOSi</td>
+<td style="text-align: center;">1.919</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.383</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 16em;">ACANTOSIS_NIGRICASSi</td>
+<td style="text-align: center;">0.000</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 16em;">FlexibilidadMuy baja</td>
+<td style="text-align: center;">1.537</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.464</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 16em;">FlexibilidadPromedio</td>
+<td style="text-align: center;">8.644</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.013</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; width: 16em;">Nivel_de_AFBajo</td>
+<td style="text-align: center;">1.934</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; width: 16em;">Nivel_de_AFModerado</td>
+<td style="text-align: center;">4.014</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.134</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><span style="font-style: italic;">Nota:</span> <sup></sup> H₀: se cumple el supuesto de proporcionalidad de odds. p &lt; 0,05 indica violación del supuesto. La fila Omnibus evalúa el supuesto globalmente para todo el modelo.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Los resultados del test de Brant permitieron evaluar el supuesto de proporcionalidad de odds, requisito fundamental para la validez del modelo de regresión logística ordinal. A nivel global, la prueba omnibus no rechazó el supuesto de proporcionalidad (χ² = 21,012; gl = 18; p = 0,279), lo que indica que el modelo ordinal es adecuado en términos generales para los datos analizados (ver <a href="#tbl-supuesto-modelo-ordinal-2" class="quarto-xref">Table&nbsp;10</a>).</p>
+<p>A nivel individual, la totalidad de las variables incluidas en el modelo cumplieron el supuesto de proporcionalidad de odds (p &gt; 0,05), a excepción de la categoría promedio de flexibilidad (<span class="math inline">\(\chi^2_{(gl=2)} = 8,644; p &lt; 0,05\)</span>), que presentó una violación estadísticamente significativa. No obstante, dado que la prueba omnibus no fue significativa y que esta violación corresponde a una única categoría de referencia dentro de una variable con escasa representación en dicha categoría (n = 34; 16,0%), su impacto sobre la validez global del modelo se considera marginal. En consecuencia, se mantiene el modelo de odds proporcionales como estrategia analítica principal, reconociendo esta limitación como un elemento a considerar en la interpretación de los resultados asociados a la variable flexibilidad (ver <a href="#tbl-supuesto-modelo-ordinal-2" class="quarto-xref">Table&nbsp;10</a>).</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
